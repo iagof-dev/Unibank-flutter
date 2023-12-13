@@ -10,10 +10,23 @@ class MainMenu extends StatelessWidget {
         title: "Unibank - Página Inicial",
         home: Scaffold(
             appBar: AppBar(
+              centerTitle: true,
               backgroundColor: const Color(0xFFFF8C32),
-              title: const Text(
-                'Unibank',
-                style: TextStyle(color: Color.fromARGB(249, 255, 255, 255)),
+              title: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image(
+                    image: AssetImage('assets/images/Logo.png'),
+                    height: 32,
+                  ),
+                  Text(
+                    'Unibank',
+                    style: TextStyle(
+                        color: Color.fromARGB(249, 255, 255, 255),
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
               leading: IconButton(
                 icon: const Icon(Icons.menu),
@@ -23,11 +36,11 @@ class MainMenu extends StatelessWidget {
               ),
               actions: [
                 IconButton(
-                  icon: const Icon(Icons.panorama),
+                  icon: Image.asset('assets/images/user.png'),
                   onPressed: () {
-                    developer.log("click | perfil");
+                    developer.log('click | profile');
                   },
-                )
+                ),
               ],
             ),
             body: const Center(

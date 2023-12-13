@@ -4,7 +4,8 @@ import 'package:unibank/Views/MainMenu.dart';
 
 main() {
   runApp(MaterialApp(
-    title: 'Navigation Basics',
+    debugShowCheckedModeBanner: false,
+    title: 'Unibank',
     home: Login(),
   ));
 }
@@ -45,8 +46,14 @@ class Login extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
-                  child: TextField(controller: txtUser),
+                  padding: const EdgeInsets.fromLTRB(50, 5, 50, 0),
+                  child: TextField(
+                    controller: txtUser,
+                    style: const TextStyle(fontSize: 15),
+                    maxLines: 1,
+                    minLines: 1,
+                    autocorrect: false,
+                  ),
                 )
               ],
             ),
@@ -78,7 +85,13 @@ class Login extends StatelessWidget {
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all(Colors.white)),
-                    child: const Text('Logar')))
+                    child: const Text('Logar'))),
+            const Center(
+              child: Text(
+                'Não possui registro?',
+                style: TextStyle(decoration: TextDecoration.underline),
+              ),
+            )
           ],
         )));
   }
